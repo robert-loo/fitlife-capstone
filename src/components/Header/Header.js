@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Twirl as Hamburger} from 'hamburger-react';
 import './Header.scss';
 
-function Header() {
+function Header({onLogout}) {
 
     const [isOpen, setOpen] = useState(false)
 
@@ -16,6 +16,7 @@ function Header() {
             <div className="title-container">
             <h2 className="title-header"> FitLife</h2>
             </div>
+            <button onClick={() => onLogout()}>Logout</button>
         </div>
     </div>
   )
