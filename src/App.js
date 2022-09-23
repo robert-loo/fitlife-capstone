@@ -19,7 +19,7 @@ function App() {
     //todo: compare username andpassword, if rquals, then login
     // if (password == ipnputpaswword && username === inputusername) {
       setIsAuthenticated(true);
-    }
+    
   }
 
   const onLogout = () => {
