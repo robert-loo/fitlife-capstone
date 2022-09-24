@@ -1,13 +1,13 @@
 import './Inputform.scss';
 import React from 'react';
 import {useState} from 'react';
+import Select from "react-dropdown-select";
 
 
 function InputForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    const result = ((10 * weight) + (6.25 * height) - (5 * age) + (isMale ? 5 : -165));
+    const result = ((10 * weight) + (6.25 * height) - (5 * age) + (isMale ? 5 : -165)) * activity;
     setBmrResult(result)
   };
 
@@ -19,10 +19,11 @@ const [height, setHeight] = useState(0)
 const [weight, setWeight] = useState('');
 const  [isMale, setIsMale] = useState(true);
 const [bmrResult, setBmrResult] = useState(0);
+const [activity, setActivity] = useState(0);
 
 
-
-
+const options = [{label: "Basal Metabolic Rate (BMR)", value: 0},{label: "Sedentary - no exercise" , value: 1.2},{label: "Lightly Active" , value: 1.375}, {label: "Moderately Active" , value: 1.55}, {label: "Very Active" , value: 1.725} ];
+  
 
   return (
     <div>
@@ -78,6 +79,10 @@ const [bmrResult, setBmrResult] = useState(0);
             />
           </div>
           <div>
+          <Select options={options} onChange={(values) => setActivity(values[0].value)}/>
+          <label for="activity">Activity Level</label>
+          </div>
+          <div>
             <button type="submit">Calculate</button>
             <button type="submit">Clear</button>
           </div>
@@ -86,11 +91,8 @@ const [bmrResult, setBmrResult] = useState(0);
           {bmrResult > 0 ? (
             <div>
               <h3>Result</h3>
-              <p>{bmrResult}</p>
-              <p>maintain weight {bmrResult * 1.2}</p>
-              <p>alskdfjasf {bmrResult * 0.7}</p>
-              <p>laksjfdlkasjf{bmrResult * 0.5}</p>
-              
+              <p>Maintain Weight {bmrResult}</p>
+              <p>Mild Weight Loss 10% Less { .87 * bmrResult}</p>
             </div>
           ) : null}
         </div>

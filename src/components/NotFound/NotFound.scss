@@ -1,0 +1,29 @@
+@use "../../styles/partials/breakpoints" as *;
+
+
+.not-found {
+    padding: 1.5rem 1rem;
+
+    @include tablet {
+        padding: 1.5rem 2rem;
+    }
+
+    &__title {
+        margin: 0;
+
+        @include tablet {
+            margin: 1.5rem 0;
+        }
+    }
+
+    &__description {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        @include tablet {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
