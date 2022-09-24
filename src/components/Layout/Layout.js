@@ -3,6 +3,7 @@ import HomePage from "../HomePage/HomePage";
 import NotFound from "../NotFound/NotFound";
 import Header from "../Header/Header";
 import RecipeSearch from "../RecipeSearch/RecipeSearch";
+import UploadRecipe from "../RecipeSearch/RecipeSearch";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import {useState} from "react";
@@ -31,9 +32,9 @@ function Layout() {
         <Routes>
           <Route path="/quiz" element=""/>
           <Route path="/BMRcalculator" element={<InputForm/>}/>
-          <Route path="uploadRecipe" element=""/>
           <Route path="/" element={<HomePage/>} end/>
             <Route path="/recipesearch" element={<RecipeSearch/>}/>
+            <Route path="/uploadrecipe" element={<UploadRecipe/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
@@ -42,7 +43,7 @@ function Layout() {
         <h1>FITLIFE</h1>
         <input placeholder="username"/>
         <input placeholder="password" />
-        <button onClick={() => onLogin()}>login</button>
+        <button onClick={() => onLogin()}>Login</button>
       </div>
   }
   </div>
