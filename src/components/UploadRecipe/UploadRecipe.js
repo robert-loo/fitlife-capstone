@@ -5,22 +5,25 @@ import "./UploadRecipe.scss"
 
 
 function UploadRecipe() {
-  const [inputTitle, setInputTitle] = useState(""); 
+  const [inputRecipeTitle, setInputRecipeTitle] = useState(""); 
   const [inputImage, setInputImage] = useState(""); 
   const [imageURLs, setImageURLs] = useState([]);
-  const [inputIntro, setInputIntro] = useState(""); 
+  const [inputRecipeIntroduction, setInputRecipeIntroduction] = useState(""); 
   const [inputIngredients, setInputIngredients] = useState(""); 
   const [inputHowTo, setInputHowTo] = useState(""); 
 
-  //  TODO - How to upload an image dynamically and it back to the back end? 
+  //  TODO - How to upload an image dynamically and push it to the back end? 
 
   const submitForm = () => {
     if (inputTitle !== ""){
-      axios.post('', {
+      axios.post('http://localhost:8001/uploadrecipe', {
         // double check what inputs do you want to send back to the back-end
-        title: inputTitle,
         image: inputImage,
-        description: inputDescription,
+        recipetitle: inputRecipeTitle,
+        recipeintroduction: inputRecipeIntroduction,
+        ingredients: inputIngredients,
+        howto: inputHowTo,
+
       })
       .then(response => {
         if (response.data) {
@@ -54,7 +57,8 @@ function onImageChange(event){
         <h1 className="upload__header">Create your recipe!</h1>
             <div>
               <h4 className="upload__title">Recipe Details</h4>
-              <img className="upload__image" alt="Click to add photo (optional)" src={inputImage} />  
+              <h3>Add Photo</h3>
+              <img className="upload__image" alt="Click to add photo (optional)" src=""/>  
               <input type="file" multiple accept="image/*" onChange={onImageChange} />
               {imageURLs.map(imageSrc => <img src={imageSrc} />) }
             </div>
@@ -63,13 +67,13 @@ function onImageChange(event){
                 className="upload__title--form"
                 type="text"
                 placeholder="e.g Momma's apple pie"
-                value={inputTitle} onChange={event => setInputTitle(event.target.value)} 
+                value={inputRecipeTitle} onChange={event => setInputRecipeTitle(event.target.value)} 
               />
               <div className="textarea__container">
                 <h4 className="upload__title--description">
                   Short Intro
                 </h4>
-                <textarea placeholder="Tell us about your recipe" value={inputIntro} onChange={event => setInputIntro(event.target.value)} />
+                <textarea placeholder="Tell us about your recipe" value={inputRecipeIntroduction} onChange={event => setInputRecipeIntroduction(event.target.value)} />
               </div>
                 <h4>
                   Ingredients

@@ -8,12 +8,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import {useState} from "react";
 
+
+const BASE_URL = "http://localhost:8001";
+
 function Layout() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     // TODO: create a state for username and password
   
     const onLogin = () => {
-      //todo: compare username andpassword, if rquals, then login
+      //todo: compare username andpassword, if equals, then login
       // if (password == ipnputpaswword && username === inputusername) {
         setIsAuthenticated(true);
     }
