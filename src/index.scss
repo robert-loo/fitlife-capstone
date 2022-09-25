@@ -1,0 +1,11 @@
+*,*::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f7f8f9;
+  font-family: "TitilliumWeb", sans-serif;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg");
+}

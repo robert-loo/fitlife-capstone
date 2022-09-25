@@ -1,4 +1,6 @@
 import React, { useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios';
 import "./UploadRecipe.scss"
 
 
@@ -6,7 +8,6 @@ import "./UploadRecipe.scss"
 
 function UploadRecipe() {
   const [inputRecipeTitle, setInputRecipeTitle] = useState(""); 
-  const [inputImage, setInputImage] = useState(""); 
   const [imageURLs, setImageURLs] = useState([]);
   const [inputRecipeIntroduction, setInputRecipeIntroduction] = useState(""); 
   const [inputIngredients, setInputIngredients] = useState(""); 
@@ -15,10 +16,10 @@ function UploadRecipe() {
   //  TODO - How to upload an image dynamically and push it to the back end? 
 
   const submitForm = () => {
-    if (inputTitle !== ""){
+    if (inputRecipeTitle !== ""){
       axios.post('http://localhost:8001/uploadrecipe', {
         // double check what inputs do you want to send back to the back-end
-        image: inputImage,
+        // image: inputImage,
         recipetitle: inputRecipeTitle,
         recipeintroduction: inputRecipeIntroduction,
         ingredients: inputIngredients,
@@ -38,17 +39,17 @@ function UploadRecipe() {
 
   // Mounting images?
 
-  useEffect(()=>{
-    if (images.length < 1) return;
-    const newImageUrls = [];
-    images.forEach(image => newImageUrls.push(URL.createObjectURL(image)))
-    setImageURLs(newImageUrls);
-  }, [images]);
+//   useEffect(()=>{
+//     if (images.length < 1) return;
+//     const newImageUrls = [];
+//     images.forEach(image => newImageUrls.push(URL.createObjectURL(image)))
+//     setImageURLs(newImageUrls);
+//   }, [images]);
 
-  // Function to upload images 
-function onImageChange(event){
-  setImages([...event.target.files]);
-}
+//   // Function to upload images 
+// function onImageChange(event){
+//   setImages([...event.target.files]);
+// }
 
 
   return (
@@ -59,8 +60,8 @@ function onImageChange(event){
               <h4 className="upload__title">Recipe Details</h4>
               <h3>Add Photo</h3>
               <img className="upload__image" alt="Click to add photo (optional)" src=""/>  
-              <input type="file" multiple accept="image/*" onChange={onImageChange} />
-              {imageURLs.map(imageSrc => <img src={imageSrc} />) }
+              {/* <input type="file" multiple accept="image/*" onChange={onImageChange} />
+              {imageURLs.map(imageSrc => <img src={imageSrc} />) } */}
             </div>
               <h4>Recipe Title</h4>
               <input
@@ -92,9 +93,9 @@ function onImageChange(event){
                     </Link>
                   </div>
                 </div>
-                {renderToaster && (
+                {/* {renderToaster && (
                   <div className="upload__toaster">Upload Successful</div>
-                )}
+                )} */}
     </main>
   )
 }

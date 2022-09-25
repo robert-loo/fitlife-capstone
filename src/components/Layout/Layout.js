@@ -3,8 +3,9 @@ import HomePage from "../HomePage/HomePage";
 import NotFound from "../NotFound/NotFound";
 import Header from "../Header/Header";
 import RecipeSearch from "../RecipeSearch/RecipeSearch";
-import UploadRecipe from "../RecipeSearch/RecipeSearch";
+import UploadRecipe from "../UploadRecipe/UploadRecipe";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './Layout.scss';
 import React from "react";
 import {useState} from "react";
 
@@ -35,19 +36,25 @@ function Layout() {
         <Routes>
           <Route path="/quiz" element=""/>
           <Route path="/BMRcalculator" element={<InputForm/>}/>
-          <Route path="/" element={<HomePage/>} end/>
+          <Route path="/" element={<HomePage/>}/>
             <Route path="/recipesearch" element={<RecipeSearch/>}/>
             <Route path="/uploadrecipe" element={<UploadRecipe/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
       :
-      <div>
-        <h1>FITLIFE</h1>
-        <input placeholder="username"/>
-        <input placeholder="password" />
-        <button onClick={() => onLogin()}>Login</button>
+      <> 
+      <div className="login__container">
+        <h1 className="login__header">FitLife</h1>
+        <div className="login__box"> 
+            <input className="login__username" placeholder="username"/>
+          <div> 
+            <input className="login__password" placeholder="password" />
+            <button className="login-btn" onClick={() => onLogin()}>Login</button>
+          </div>
+        </div>
       </div>
+      </>
   }
   </div>
   )

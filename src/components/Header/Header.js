@@ -24,7 +24,7 @@ function Header({onLogout}) {
               <div>
                 <Link to="/BMRcalculator" onClick={() => setOpen(false)}>BMR Calculator</Link>
               <div>
-                <Link to="/UploadRecipe" onClick={() => setOpen(false)}>Upload Your Recipe</Link>
+                <Link to="/uploadrecipe" onClick={() => setOpen(false)}>Upload Your Recipe</Link>
               </div>
               </div>
               </div>}
