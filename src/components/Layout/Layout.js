@@ -47,11 +47,10 @@ function Layout() {
       <div className="login__container">
         <h1 className="login__header">FitLife</h1>
         <div className="login__box"> 
+            <h1>Login</h1>
             <input className="login__username" placeholder="username"/>
-          <div> 
             <input className="login__password" placeholder="password" />
             <button className="login-btn" onClick={() => onLogin()}>Login</button>
-          </div>
         </div>
       </div>
       </>
@@ -61,3 +60,5 @@ function Layout() {
 }
 
 export default Layout
+
+

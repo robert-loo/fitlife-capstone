@@ -12,14 +12,23 @@ function UploadRecipe() {
   const [inputRecipeIntroduction, setInputRecipeIntroduction] = useState(""); 
   const [inputIngredients, setInputIngredients] = useState(""); 
   const [inputHowTo, setInputHowTo] = useState(""); 
+  const [fileData, setFileData] = useState([]);
+
+  const onImageChange = (event)=>{
+    console.log(event.target.files);
+    setFileData([...event.target.files])
+  }
 
   //  TODO - How to upload an image dynamically and push it to the back end? 
 
-  const submitForm = () => {
+  const submitForm = (event) => {
+    event.preventDefault()
     if (inputRecipeTitle !== ""){
+      console.log("submitted file data", fileData)   
       axios.post('http://localhost:8001/uploadrecipe', {
+  
         // double check what inputs do you want to send back to the back-end
-        // image: inputImage,
+        images: fileData.map(file => file.name),
         recipetitle: inputRecipeTitle,
         recipeintroduction: inputRecipeIntroduction,
         ingredients: inputIngredients,
@@ -28,6 +37,7 @@ function UploadRecipe() {
       })
       .then(response => {
         if (response.data) {
+          console.log(response.data)
           // triggerToaster()
         }
       })
@@ -36,6 +46,13 @@ function UploadRecipe() {
       });
     }
   }
+
+const renderImages = () => {
+    return fileData.map(file => {
+      const fileSource = URL.createObjectURL(file)
+      return  <img key={file.name} src={fileSource}></img>
+    })
+}
 
   // Mounting images?
 
@@ -54,14 +71,19 @@ function UploadRecipe() {
 
   return (
   <main>
+    <form onSubmit={submitForm}>
       <div className="upload__container">
         <h1 className="upload__header">Create your recipe!</h1>
             <div>
               <h4 className="upload__title">Recipe Details</h4>
               <h3>Add Photo</h3>
-              <img className="upload__image" alt="Click to add photo (optional)" src=""/>  
-              {/* <input type="file" multiple accept="image/*" onChange={onImageChange} />
-              {imageURLs.map(imageSrc => <img src={imageSrc} />) } */}
+              <div>
+                <h2>Preview</h2>
+                {fileData && 
+                  renderImages()
+                }
+              </div>
+              <input type="file" multiple accept="image/*" onChange={onImageChange} />
             </div>
               <h4>Recipe Title</h4>
               <input
@@ -86,7 +108,7 @@ function UploadRecipe() {
                 </h4>
                 <textarea placeholder="1. Boil the water first" value={inputHowTo} onChange={event => setInputHowTo(event.target.value)} />
                 <div className="upload__container--tablet">
-                <button onClick={()=>submitForm()}>Upload Recipe</button>
+                <button type="submit">Upload Recipe</button>
                   <div className="upload__cancel--container">
                     <Link to="/">
                       <button className="upload__cancel--button">CANCEL</button>{" "}
@@ -96,6 +118,7 @@ function UploadRecipe() {
                 {/* {renderToaster && (
                   <div className="upload__toaster">Upload Successful</div>
                 )} */}
+      </form>
     </main>
   )
 }
