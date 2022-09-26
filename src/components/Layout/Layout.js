@@ -47,10 +47,12 @@ function Layout() {
       <div className="login__container">
         <h1 className="login__header">FitLife</h1>
         <div className="login__box"> 
-            <h1>Login</h1>
-            <input className="login__username" placeholder="username"/>
-            <input className="login__password" placeholder="password" />
+            <h1 className="login__title">Login</h1>
+            <input className="login__username" placeholder="Username"/>
+            <input className="login__password" placeholder="Password" />
+            <div className="btn__container"> 
             <button className="login-btn" onClick={() => onLogin()}>Login</button>
+            </div>
         </div>
       </div>
       </>

@@ -55,7 +55,7 @@ const RecipeSearch = () => {
               name="search"
               value={searchValue}
               onChange={(event) => setSearchValue(event.target.value)}
-              placeholder="Type to find your TV show"
+              placeholder="Find your meal"
             ></input>
             <button
               className="searchbar__btn"
