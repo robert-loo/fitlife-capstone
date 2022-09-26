@@ -37,7 +37,7 @@ function Layout() {
       <Routes>
         <Route path="/quiz" element=""/>
         <Route path="/BMRcalculator" element={<InputForm/>}/>
-        <Route path="/" element={<HomePage/>}/>
+        <Route path="/" element={<HomePage/>} end/>
           <Route path="/recipesearch" element={<RecipeSearch/>}/>
           <Route path="/communityrecipe" element={<CommunityRecipe/>} />
           <Route path="/uploadrecipe" element={<UploadRecipe/>}/>
