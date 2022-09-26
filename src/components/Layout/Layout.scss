@@ -1,0 +1,25 @@
+
+.login{
+    &__header{
+        color: white;
+
+    }
+    &__container {
+        background-image: url('../../assets/images/login-background.jpg');
+        // background-position: 0 30%;
+        background-size: cover;
+
+        padding: 1rem;
+        height:100vh;
+    }
+
+    &__box{
+        padding-top: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
+        // background-color: white;
+    }
+    &-btn{
+        margin-top: .5rem;
+    }
+}

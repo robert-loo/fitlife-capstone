@@ -3,10 +3,11 @@ import HomePage from "../HomePage/HomePage";
 import NotFound from "../NotFound/NotFound";
 import Header from "../Header/Header";
 import RecipeSearch from "../RecipeSearch/RecipeSearch";
-import UploadRecipe from "../RecipeSearch/RecipeSearch";
+import UploadRecipe from "../UploadRecipe/UploadRecipe";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import {useState} from "react";
+import './Layout.scss';
 
 
 const BASE_URL = "http://localhost:8001";
@@ -31,23 +32,28 @@ function Layout() {
     <div>
     {isAuthenticated ?  
       <BrowserRouter>
-        <Header  onLogout={onLogout}/>
-        <Routes>
-          <Route path="/quiz" element=""/>
-          <Route path="/BMRcalculator" element={<InputForm/>}/>
-          <Route path="/" element={<HomePage/>} end/>
-            <Route path="/recipesearch" element={<RecipeSearch/>}/>
-            <Route path="/uploadrecipe" element={<UploadRecipe/>}/>
-          <Route path="*" element={<NotFound/>}/>
-        </Routes>
-      </BrowserRouter>
+      <Header  onLogout={onLogout}/>
+      <Routes>
+        <Route path="/quiz" element=""/>
+        <Route path="/BMRcalculator" element={<InputForm/>}/>
+        <Route path="/" element={<HomePage/>}/>
+          <Route path="/recipesearch" element={<RecipeSearch/>}/>
+          <Route path="/uploadrecipe" element={<UploadRecipe/>}/>
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
+    </BrowserRouter>
       :
-      <div>
-        <h1>FITLIFE</h1>
-        <input placeholder="username"/>
-        <input placeholder="password" />
-        <button onClick={() => onLogin()}>Login</button>
+      <> 
+      <div className="login__container">
+        <h1 className="login__header">FitLife</h1>
+        <div className="login__box"> 
+            <h1>Login</h1>
+            <input className="login__username" placeholder="username"/>
+            <input className="login__password" placeholder="password" />
+            <button className="login-btn" onClick={() => onLogin()}>Login</button>
+        </div>
       </div>
+      </>
   }
   </div>
   )
