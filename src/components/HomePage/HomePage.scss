@@ -1,0 +1,54 @@
+.homepage{
+    &__container{
+    background-image: url('../../assets/images/hero-image.jpg');
+    height: 30vh;
+    background-size: cover;
+    background-position: -25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+    &__title{
+        color: white;
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+
+    &__subtitle{
+        color: white;
+        font-size: medium;
+        font-weight: 400;
+        margin-top: 0;
+    }
+    &__footer{
+        color: white;
+    }
+    &__subheader--container{
+        // background-color: gray;
+        width: 80%;
+        position: absolute;
+        bottom: 63%;
+        left: 10%;
+        text-align: center;
+    }
+    &-btn{
+        margin-top: .5rem;
+        background-color: #00ADB5;
+        color: #fff;
+        border: none;
+        border-radius: 2.8125rem;
+        cursor: pointer;
+        width: 12.375rem;
+        font-size: 18px;
+        padding: 10px;
+        margin: 20px 0px;
+        font-weight: bold;
+    }
+}
+
+.hero__overlay {
+    z-index: -1;
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    background-color: rgba(#323232, 0.5)
+}

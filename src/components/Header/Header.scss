@@ -7,7 +7,9 @@
     display: flex;
     padding: 0.5rem;
     width: 100%;
-    background-color: #FEFBF6;
+    background-color: #00ADB5;
+    justify-content: start;
+    // place-content: space-around;
     // position: absolute;
     // top: 0;
 }
@@ -24,5 +26,64 @@
         margin-top: 0;
         margin-bottom: 0;
         margin-left: 8px;
+        color: white;
     }
 }
+
+.hamburger{
+    color: white;
+}
+
+.sidebar{
+    position: fixed;
+    background-color: #393E46;
+    // width: 12.5rem;
+    width: 100%;
+    height: 7.5rem;
+    padding: 1rem;
+    top: 4rem;
+    left: 0rem;
+    z-index: 1;
+    text-decoration: none;
+    transition: 850ms;
+}
+
+.sidebar.active{
+    left: 0;
+    transition: 350ms;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+.nav-text a:hover {
+    background-color: #1a83ff;
+  }
+  
+  .nav-menu-items {
+    width: 100%;
+  }
+  
+  .navbar-toggle {
+    background-color: #060b26;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  span {
+    margin-left: 16px;
+  }
+
+  .sidebar-routes{
+    text-decoration: none;
+    color: white;
+  }

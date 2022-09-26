@@ -3,6 +3,7 @@ import HomePage from "../HomePage/HomePage";
 import NotFound from "../NotFound/NotFound";
 import Header from "../Header/Header";
 import RecipeSearch from "../RecipeSearch/RecipeSearch";
+import CommunityRecipe from "../CommunityRecipe/CommunityRecipe";
 import UploadRecipe from "../UploadRecipe/UploadRecipe";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
@@ -38,6 +39,7 @@ function Layout() {
         <Route path="/BMRcalculator" element={<InputForm/>}/>
         <Route path="/" element={<HomePage/>}/>
           <Route path="/recipesearch" element={<RecipeSearch/>}/>
+          <Route path="/communityrecipe" element={<CommunityRecipe/>} />
           <Route path="/uploadrecipe" element={<UploadRecipe/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>

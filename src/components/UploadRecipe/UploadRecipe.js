@@ -8,7 +8,7 @@ import "./UploadRecipe.scss"
 
 function UploadRecipe() {
   const [inputRecipeTitle, setInputRecipeTitle] = useState(""); 
-  const [imageURLs, setImageURLs] = useState([]);
+  const [imageURL, setImageURL] = useState(null);
   const [inputRecipeIntroduction, setInputRecipeIntroduction] = useState(""); 
   const [inputIngredients, setInputIngredients] = useState(""); 
   const [inputHowTo, setInputHowTo] = useState(""); 
@@ -26,7 +26,6 @@ function UploadRecipe() {
     if (inputRecipeTitle !== ""){
       console.log("submitted file data", fileData)   
       axios.post('http://localhost:8001/uploadrecipe', {
-        
         // double check what inputs do you want to send back to the back-end
         images: fileData.map(file => file.name),
         recipetitle: inputRecipeTitle,
@@ -49,7 +48,8 @@ function UploadRecipe() {
 
 const renderImages = () => {
     return fileData.map(file => {
-      const fileSource = URL.createObjectURL(file)
+      const fileSource = URL.createObjectURL(file);
+      setImageURL(fileSource);
       return  <img key={file.name} src={fileSource}></img>
     })
 }
@@ -95,7 +95,7 @@ const renderImages = () => {
                 <div className="upload__container--tablet">
                 <button type="submit">Upload Recipe</button>
                   <div className="upload__cancel--container">
-                    <Link to="/">
+                    <Link to="/communityrecipe">
                       <button className="upload__cancel--button">CANCEL</button>{" "}
                     </Link>
                   </div>

@@ -11,20 +11,23 @@ function Header({onLogout}) {
     <div className="cover">
         <div className="navbar">
             <div>
-            <Hamburger color="black" toggled={isOpen} 
+            <Hamburger className="hamburger" color="white" toggled={isOpen} 
             size="40" rounded toggle={setOpen}/>
             {isOpen && 
-            <div style={{position :'absolute', background: 'beige', width:'200px', height: '75px'}}>
+            <div className="sidebar">
               <div>
-                <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+                <Link className="sidebar-routes" to="/" onClick={() => setOpen(false)}>Home</Link>
               </div>
               <div>
-                <Link to="/recipesearch" onClick={() => setOpen(false)}>Recipe Search</Link>
+                <Link className="sidebar-routes" to="/recipesearch" onClick={() => setOpen(false)}>Recipe Search</Link>
               </div>
               <div>
-                <Link to="/BMRcalculator" onClick={() => setOpen(false)}>BMR Calculator</Link>
+                <Link className="sidebar-routes" to="/BMRcalculator" onClick={() => setOpen(false)}>BMR Calculator</Link>
               <div>
-                <Link to="/UploadRecipe" onClick={() => setOpen(false)}>Upload Your Recipe</Link>
+                <Link className="sidebar-routes" to="/communityrecipe" onClick={() => setOpen(false)}>Community Recipe</Link>
+              </div>
+              <div>
+                <Link className="sidebar-routes" onClick={() => onLogout()}>Logout</Link>
               </div>
               </div>
               </div>}
@@ -32,7 +35,7 @@ function Header({onLogout}) {
             <div className="title-container">
             <h2 className="title-header"> FitLife</h2>
             </div>
-            <button onClick={() => onLogout()}>Logout</button>
+            {/* <button className="logout-btn"onClick={() => onLogout()}>Logout</button> */}
         </div>
     </div>
   )
