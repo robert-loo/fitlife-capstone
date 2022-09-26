@@ -5,6 +5,7 @@
         font-family: poppins;
     }
     &__header{
+        display: flex;
         color: white;
         padding: 1rem;
         margin: 0;
@@ -12,27 +13,27 @@
     }
     &__container {
         background-image: url('../../assets/images/login-background.jpg');
-        // background-position: 0 30%;
         background-size: cover;
-        position: relative;
-        // padding: 1rem;
         height:100vh;
+        display: flex;
+        // background-position: 0 30%;
+        // position: relative;
+        // padding: 1rem;
     }
 
     &__box{
         padding-bottom: 1.5625rem;
         padding-left: 1.5625rem;
         padding-right: 1.5625rem;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        right: 10%;
-        bottom: 45%;
+        // position: absolute;
+        // display: flex;
+        // flex-direction: column;
+        // right: 10%;
+        // bottom: 45%;
         background-color: rgba(0, 0, 0, 0.5);
         margin: auto auto;
         border-radius: 5px;
         box-shadow: 0 0 10px #000;
-        position: absolute;
         // background-color: white;
     }
     &-btn{
