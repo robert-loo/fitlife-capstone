@@ -1,6 +1,96 @@
 .inputform-container{
-    background-color: #FFFF;
+    // background-color: #FFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.calculator{
+    &__container{
+        // position: absolute;
+        position: fixed;
+        top: 55px;
+        max-height: 100vh;
+        // overflow-x: hidden;
+        // overflow-y: scroll;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+
+        &-inner{
+            background-color: white;
+            width: 90%;
+            border-radius: .9375rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        &-lowerouter{
+            background-color: white;
+            width: 289px;
+            margin-top: 170px;
+            border-radius: 0.9375rem;
+        }
+
+        &-loweinner{
+            background-color: #EEEEEE;
+        }
+    }
+}
+
+.gender{
+    &__container{
+        display: flex;
+    }
+    &__title{
+        margin: 0;
+    }
+}
+
+.height{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        &-outer{
+            margin-top: 1rem;
+            display: flex;
+        }
+    }
+    &__title{
+        margin: 0;
+        font-size:smaller;
+        color: #00ADB5;
+        font-weight: 500;
+    }
+    &__input{
+        width: 80%;
+        border-radius: .625rem;
+        margin-top: 0.25rem;
+        padding: 0.25rem;
+    }
+}
+
+.weight{
+    &__container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+        margin: 0;
+        font-size:smaller;
+        color: #00ADB5;
+        font-weight: 500;
+    }
+
+    &__input{
+      border-radius: .625rem;
+      width: 80%;
+      margin-top: 0.25rem;
+      padding: 0.25rem;
+    }
 }
