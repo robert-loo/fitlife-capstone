@@ -1,15 +1,11 @@
 import './Inputform.scss';
 import React from 'react';
 import {useState} from 'react';
+import {Link, useNavigate} from "react-router-dom";
 import Select from "react-dropdown-select";
 
 
 function InputForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const result = ((10 * weight) + (6.25 * height) - (5 * age) + (isMale ? 5 : -165)) * activity;
-    setBmrResult(result)
-  };
 
 
 // state
@@ -18,7 +14,7 @@ const [age, setAge] = useState(0)
 const [height, setHeight] = useState(0)
 const [weight, setWeight] = useState('');
 const  [isMale, setIsMale] = useState(true);
-const [bmrResult, setBmrResult] = useState(0);
+const [bmrResult, setBmrResult] = useState(55);
 const [activity, setActivity] = useState(0);
 
 
@@ -29,11 +25,27 @@ const options = [
   { label: "Moderately Active", value: 1.55 },
   { label: "Very Active", value: 1.725 },
 ];
+
+const navigate = useNavigate();
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const result = ((10 * weight) + (6.25 * height) - (5 * age) + (isMale ? 5 : -165)) * activity;
+  navigate("/calculatorresults", {state: {bmrResult: result}});
+};
+
   
 
   return (
     <div>
       <div className="inputform-container">
+        <div>
+          <h1>Calories Calculator</h1>
+          <p>To lose weight, you need to eat fewer calories than you expend over time. Thus, 
+            learning how many calories you burn every day is one of the most important steps you can take to lose weight.
+            Use this calculator to estimate how many calories you burn and how many you should eat every day to lose weight.</p>
+        </div>
+
         <form onSubmit={handleSubmit}>
           <div>
             <h3>Age</h3>
@@ -89,22 +101,17 @@ const options = [
           <label for="activity">Activity Level</label>
           </div>
           <div>
-            <button type="submit">Calculate</button>
+           <button type="submit"
+           onClick={(e) => handleSubmit(e)}
+           >Calculate</button>
             <button type="submit">Clear</button>
           </div>
         </form>
-        <div>
-          {bmrResult > 0 ? (
-            <div>
-              <h3>Result</h3>
-              <p>Maintain Weight {bmrResult}</p>
-              <p>Mild Weight Loss 10% Less { .87 * bmrResult}</p>
-            </div>
-          ) : null}
-        </div>
       </div>
     </div>
   );
 }
+
+
 
 export default InputForm;

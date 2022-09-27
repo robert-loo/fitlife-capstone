@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import {useState} from "react";
 import './Layout.scss';
+import CalculatorResults from "../CalculatorResults/CalculatorResults";
 
 
 const BASE_URL = "http://localhost:8001";
@@ -38,6 +39,7 @@ function Layout() {
       <Routes>
         <Route path="/quiz" element=""/>
         <Route path="/BMRcalculator" element={<InputForm/>}/>
+        <Route path="/calculatorresults" element={<CalculatorResults/>}/>
         <Route path="/" element={<HomePage/>} end/>
           <Route path="/recipesearch" element={<RecipeSearch/>}/>
           <Route path="/communityrecipe" element={<CommunityRecipe/>} />
