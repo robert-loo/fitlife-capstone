@@ -7,9 +7,10 @@
 
 .calculator{
     &__container{
-        // position: absolute;
-        position: fixed;
-        top: 55px;
+        position: absolute;
+        // position: fixed;
+        top: 52px;
+        // top: 63px;
         max-height: 100vh;
         // overflow-x: hidden;
         // overflow-y: scroll;
@@ -23,8 +24,8 @@
             background-color: white;
             width: 90%;
             border-radius: .9375rem;
-            display: flex;
-            flex-direction: column;
+            // display: flex;
+            // flex-direction: column;
             align-items: center;
         }
 
@@ -32,22 +33,55 @@
         &-lowerouter{
             background-color: white;
             width: 289px;
-            margin-top: 170px;
+            // margin-top: 170px;
             border-radius: 0.9375rem;
+            margin-top: 130px;
         }
 
         &-loweinner{
             background-color: #EEEEEE;
         }
     }
+    &__title{
+       font-family: 'Roboto', sans-serif;
+       margin-top: 0;
+       margin-bottom: 0;
+       margin-left: 0;
+       font-weight: 500;
+       font-size: medium;
+       padding: .5rem;
+       padding-bottom: .25rem;
+       padding-top: 1.125rem;
+    }
+    &__description{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: small;
+        line-height: 1rem;
+        margin: 0 auto;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        padding-bottom: 1.125rem;
+        padding-top: 0;
+        padding-left: 8px;
+        text-align: justify;
+    }
 }
 
 .gender{
     &__container{
         display: flex;
+        justify-content: space-between;
     }
     &__title{
         margin: 0;
+        font-size: smaller;
+        color: #00ADB5;
+        font-weight: 500;
+    }
+    &__radio{
+        font-size: smaller;
+        // font-weight: 500;
     }
 }
 
@@ -67,7 +101,7 @@
         font-weight: 500;
     }
     &__input{
-        width: 80%;
+        width: 90%;
         border-radius: .625rem;
         margin-top: 0.25rem;
         padding: 0.25rem;
@@ -89,8 +123,16 @@
 
     &__input{
       border-radius: .625rem;
-      width: 80%;
+      width: 90%;
       margin-top: 0.25rem;
       padding: 0.25rem;
     }
+}
+
+.form {
+    padding: 1rem;
+}
+
+.female-radio{
+    margin-right: 1.3125rem;
 }

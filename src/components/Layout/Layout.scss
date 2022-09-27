@@ -2,7 +2,7 @@
 .login{
     &__title{
         color: white;
-        font-family: poppins;
+        // font-family: poppins;
     }
     &__header{
         display: flex;
@@ -60,7 +60,7 @@
         border-radius: 5px;
         width: 100%;
         font-size: 18px;
-        font-family: poppins;
+        // font-family: poppins;
     }
 
     &__password{
@@ -70,10 +70,10 @@
         border-radius: 5px;
         width: 100%;
         font-size: 18px;
-        font-family: poppins;
+        // font-family: poppins;
     }
 }
 
 .btn__container{
-    font-family: poppins;
+    // font-family: poppins;
 }

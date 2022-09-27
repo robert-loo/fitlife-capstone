@@ -47,11 +47,11 @@ const handleSubmit = (event) => {
         </div>
     <div className="calculator__container-lowerouter"> 
       <div className="calculator__container-lowerinner"> 
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <div className="gender__container">
             <h3 className="gender__title">Gender </h3>
           <div className="gender__container-right"> 
-              <input
+              <input 
                 type="radio"
                 name="gender"
                 id="male"
@@ -59,15 +59,15 @@ const handleSubmit = (event) => {
                 onClick={() => setIsMale(true)}
                 checked
               />
-              <label for="male">Male</label>
-              <input
+              <label className="gender__radio" for="male">Male</label>
+              <input 
                 type="radio"
                 name="gender"
                 id="female"
                 value={!isMale}
                 onClick={() => setIsMale(false)}
               />
-              <label for="female">Female</label>
+              <label className="gender__radio female-radio" for="female">Female</label>
             </div>
           </div>
 
