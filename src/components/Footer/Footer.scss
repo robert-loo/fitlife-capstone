@@ -11,7 +11,8 @@
         background-color: #00ADB5;
         color: #FFFF;
         margin-top: 0;
-        font-size: x-small;
+        font-size: small;
+        font-weight: 300;
         display: flex;
         justify-content: center;
         padding: 1rem;
@@ -31,6 +32,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 0;
+    font-size: large;
 }
 
 .text-justify{
@@ -39,6 +41,7 @@
     text-align: center;
     padding-left: 16px;
     padding-right: 16px;
+    font-weight: 300;
 }
 
 
@@ -119,6 +122,8 @@
   margin-right: 16px;
   margin-left: 16px;
   padding-bottom: 1rem;
+  font-weight: 300;
+  font-size: small;
   
 }
 @media (max-width:991px)
@@ -201,6 +206,7 @@
 {
   background-color:#ea4c89
 }
+
 @media (max-width:767px)
 {
   .social-icons li.title
@@ -209,4 +215,14 @@
     margin-right:0;
     font-weight:600
   }
+}
+
+.footer__social-header{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    padding-top: 0;
 }

@@ -54,3 +54,10 @@
     width: 100%;
     background-color: rgba(#323232, 0.5)
 }
+
+.meals{
+    &__container{
+        height: 6.25rem;
+        padding: 1rem;
+    }
+}

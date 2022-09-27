@@ -23,18 +23,19 @@ function Footer() {
             <p className="copyright-text">&copy; 2022 All Rights Reserved by Fitlife LLC.
             </p>
           </div>
+          <h4 className="footer__social-header">Join the Community!</h4>
           <div class="footer__social">
-            <a href="https://www.instagram.com/">
+            <a href="https://www.twitter.com/">
             <img class="footer__social--logo" src={twitterLogo} alt="Twitter"/></a>
             <a href="https://www.facebook.com/">
             <img class="footer__social--logo" src={facebookLogo} alt="Facebook"/> </a>
-            <a href="https://www.twitter.com/">
+            <a href="https://www.google.com/">
             <img class="footer__social--logo" src={googleLogo} alt="Google"/> </a>
         </div>
         </div>
       </div>
 </div>
-      <div><p className="footer__lower">FitLife | a Capstone Project by Robert Loo</p></div>
+      <div><p className="footer__lower">FitLife | Capstone Project by Robert Loo</p></div>
   </div>
   )
 }

@@ -21,9 +21,16 @@ function HomePage() {
           <Link to="/BMRcalculator"> 
             <button className="homepage-btn">START HERE</button>
           </Link>
+          {/* <div className="meals__container"> 
+            <div>
+              <h2> Meal Recipes</h2>
+            </div>
+            <div>
+              <h2>Recipes shared by the community</h2>
+            </div>
+          </div> */}
         </div>
       </div>
-      <Footer/>
     </div>
   )
 }

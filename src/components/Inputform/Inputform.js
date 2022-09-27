@@ -22,7 +22,13 @@ const [bmrResult, setBmrResult] = useState(0);
 const [activity, setActivity] = useState(0);
 
 
-const options = [{label: "Basal Metabolic Rate (BMR)", value: 0},{label: "Sedentary - no exercise" , value: 1.2},{label: "Lightly Active" , value: 1.375}, {label: "Moderately Active" , value: 1.55}, {label: "Very Active" , value: 1.725} ];
+const options = [
+  { label: "Basal Metabolic Rate (BMR)", value: 0 },
+  { label: "Sedentary - no exercise", value: 1.2 },
+  { label: "Lightly Active", value: 1.375 },
+  { label: "Moderately Active", value: 1.55 },
+  { label: "Very Active", value: 1.725 },
+];
   
 
   return (

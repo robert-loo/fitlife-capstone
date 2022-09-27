@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import RecipeSearch from "../RecipeSearch/RecipeSearch";
 import CommunityRecipe from "../CommunityRecipe/CommunityRecipe";
 import UploadRecipe from "../UploadRecipe/UploadRecipe";
+import Footer from "../Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import {useState} from "react";
@@ -43,6 +44,7 @@ function Layout() {
           <Route path="/uploadrecipe" element={<UploadRecipe/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
       :
       <> 
