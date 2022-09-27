@@ -3,6 +3,8 @@ import React from "react";
 import {useEffect, useState} from "react";
 import './CommunityRecipe.scss';
 import axios from 'axios';
+import RecipeCard from "../RecipeCard/RecipeCard";
+
 
 
 
@@ -32,7 +34,6 @@ function CommunityRecipe() {
         });
       }
     }
-
     useEffect(() => {
       const rsp = axios.get(BASE_URL + "/searchrecipes")
        .then(res => setRecipes(res.data));
@@ -41,23 +42,24 @@ function CommunityRecipe() {
 
 
   return (
-    <div>
-        <h3>CommunityRecipes</h3>
-        <input onChange={handleInputChange} onKeyDown={searchRecipes} type="text" placeholder="search"/>
-        {/* <button onClick={searchRecipes}>Search</button> */}
-        <Link to="/uploadrecipe">
-            <button >Upload</button>
-        </Link>
-        {recipes.length > 0 &&
-            recipes.map((r) => {
-              return (
-                <div key={r.id}>
-                  <h3>{r.recipetitle}</h3>
-                  <img className="recipe-img"src={`${BASE_URL}/images/${r.image}`}></img>
-                  {/* <p>Ingredients: {r.ingredients}</p> */}
-                </div>
-              );
-            })}
+    <div className="communityrecipe__page">
+      <div className="communityrecipe__container">
+          <div className="communityrecipe__container__inner">
+              <h3>CommunityRecipes</h3>
+            <h4>Recipes shared by the Community</h4>
+            <input onChange={handleInputChange} onKeyDown={searchRecipes} type="text" placeholder="search"/>
+            {/* <button onClick={searchRecipes}>Search</button> */}
+            <Link to="/uploadrecipe">
+                <button >Upload</button>
+            </Link>
+            {recipes.length > 0 &&
+                recipes.map((r) => {
+                  return (
+                    <RecipeCard key={r.id} {...r}/>
+                );
+              })}
+          </div>
+        </div>
     </div>
   )
 }

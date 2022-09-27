@@ -34,8 +34,18 @@
     color: white;
 }
 
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 .sidebar{
-    position: fixed;
+    animation: fadeIn .3s ease-in forwards; 
+    position: absolute;
+    top: 3.5rem;
     background-color: #393E46;
     // width: 12.5rem;
     width: 100%;
@@ -43,7 +53,9 @@
     padding: 1rem;
     top: 4rem;
     left: 0rem;
-    z-index: 1;
+    box-shadow: 0 -1rem 0 #333C41 ;
+    // z-index: 1;
+    z-index: 10;
     text-decoration: none;
     transition: 850ms;
 }

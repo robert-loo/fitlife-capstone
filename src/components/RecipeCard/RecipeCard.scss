@@ -1,0 +1,14 @@
+
+
+.recipecard {
+    &__container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    &__reactions{
+        display: flex;
+        flex-direction: row;
+        
+    }
+}
