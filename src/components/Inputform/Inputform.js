@@ -41,7 +41,7 @@ const handleSubmit = (event) => {
         <div className="calculator__container"> 
           <div className="calculator__container-inner">
             <h3 className="calculator__title">Calories Calculator</h3>
-            <p className="calculator__description">Use this calculator to estimate how many calories you burn and how many you should eat every day to lose weight, maintain, and gain muscle.
+            <p className="calculator__description">Use this calculator to estimate how many calories you should eat every day to lose weight, maintain, and gain muscle.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ const handleSubmit = (event) => {
 
         <div className="height__container-outer">
           <div className="height__container">
-            <h3 className="height__title">Height</h3>
+            <h3 className="height__title">Height (cm)</h3>
             <input className="height__input"
               value={height}
               onChange={(event) => setHeight(event.target.value)}
@@ -84,35 +84,36 @@ const handleSubmit = (event) => {
           </div>
           <div className="weight__container">
             {/* <div> */}
-              <h3 className="weight__title">Weight </h3>
+              <h3 className="weight__title">Weight (kg)</h3>
               <input className="weight__input"
                 value={weight}
                 onChange={(event) => setWeight(event.target.value)}
                 type="number"
                 name="weight"
-                placeholder="kilograms(kg)"
+                placeholder="kilograms"
               />
              {/* </div> */}
           </div>
         </div>
           <div>
-            <h3>Age</h3>
-            <input
+            <h3 className="age__title">Age</h3>
+            <input className="age__input"
               value={age}
               onChange={(event) => setAge(event.target.value)}
               type="number"
               name="age"
+              placeholder="ages 15 - 80"
             />
           </div>
           <div>
-          <Select options={options} onChange={(values) => setActivity(values[0].value)}/>
-          <label for="activity">Activity Level</label>
+          <label className="activity__title" for="activity">Activity Level</label>
+          <Select className="activity__input"options={options} onChange={(values) => setActivity(values[0].value)}/>
           </div>
-          <div>
-           <button type="submit"
+          <div className="btn-container">
+           <button className="results-btn btn-left"type="submit"
            onClick={(e) => handleSubmit(e)}
            >GET RESULTS!</button>
-            <button type="submit">Clear</button>
+            <button className="results-btn" type="submit">Clear</button>
           </div>
         </form>
       </div>
