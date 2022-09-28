@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import RecipeCard from "../RecipeCard/RecipeCard";
 import Modal from "../Modal/Modal";
 import './RecipeSearch.scss'
-import RecipeCard from "../RecipeCard/RecipeCard";
 
 const API = "https://api.edamam.com/api/recipes/v2";
 const API_ID = "0d2dab7c";
@@ -14,7 +14,17 @@ const RecipeSearch = () => {
   const [searchValue, setSearchValue] = useState("");
   const [results, setResults] = useState([]);
   const [recipe, setRecipe] = useState(null);
-  // const [diet, setDiet] = useState(null);
+  
+  const renderRecipes = () => {
+    return results.map((recipe)=>{
+      return (<RecipeCard 
+      image={recipe.image}
+      recipetitle={recipe.label}
+      recipeintroduction=""
+      author={recipe.source} 
+      />)
+    }) 
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,7 +38,6 @@ const RecipeSearch = () => {
           app_key: API_KEY,
           app_id: API_ID,
           q: searchValue,
-          // diet: diet,
         },
       })
       .then((res) => res.data["hits"]);
@@ -38,40 +47,33 @@ const RecipeSearch = () => {
   return (
     <div className="searchbar">
       {recipe != null ? (
-        <div>
+        <div key={recipe._links.self}>
           <button onClick={() => setRecipe(null)}>clear</button>
 
           <div> 
           <div>
-          <img className="recipe-img-detail" src={recipe.image}></img>
+          <img className="recipe-img" src={recipe.image}></img>
           </div>
           <div> 
           <h3>{recipe.label}</h3>
-          <p>Calories: {Math.round(recipe.calories)}</p>
-          </div>
-          </div>
-
+          <p>Calories: {recipe.calories}</p> 
+        
+      </div>
+      </div>
           {recipe.digest.filter(f => ["Fat", "Protein", "Carbs"].includes(f.label))
           .map(d => (
             <div>
               <h2>{d.label}</h2>
-              <p>{Math.round(d.total)}</p>
+              <p>{d.total}</p>
             </div>
           ))}
-
-          <div>Ingredients</div>
-          <ul>
-          {recipe.ingredientLines.map((i, index) => 
-            <li key={index}>{i}</li>
-            )}
-          </ul>
         </div>
       ) : (
         <div>
           <div className="searchbar__container"> 
             <form onSubmit={handleSubmit} className="searchbar__form">
+              <h3 className="recipesearch__title">Find a Recipe!</h3>
               <div className="searchbar__btn-container"> 
-              <h3>Find a Recipe!</h3>
               <input
                 className="searchbar__input"
                 name="search"
@@ -93,6 +95,7 @@ const RecipeSearch = () => {
           </div>
           {results.length > 0 &&
             results.map((r) => {
+              console.log(r);
               const item = r.recipe;
               return (
                 <div key={item.id} onClick={() => setRecipe(item)}>
@@ -103,6 +106,11 @@ const RecipeSearch = () => {
                     author={item.source}
                     />
                   </div>
+                // 
+                //   <h3>{item.label}</h3>
+                //   <img className="recipe-img" src={item.image}></img>
+                //   <p>Calories: {Math.round(item.calories)}</p>
+                // </div>
               );
             })}
           <Modal open={modal} onClose={() => setModal(false)} />

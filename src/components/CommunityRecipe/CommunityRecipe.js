@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import './CommunityRecipe.scss';
 import axios from 'axios';
 import RecipeCard from "../RecipeCard/RecipeCard";
+import { useLocation } from 'react-router-dom'
 
 
 
@@ -13,6 +14,7 @@ const BASE_URL = "http://localhost:8001";
 function CommunityRecipe() {
     const [recipes, setRecipes] = useState([]);
     const [searchTerm, setSearchTerm] = useState();
+    const location = useLocation();
 
 
     const handleInputChange = (event) => {
@@ -40,24 +42,39 @@ function CommunityRecipe() {
        
    }, [])
 
+   useEffect(() => {
+    const rsp = axios.get(BASE_URL + "/searchrecipes")
+     .then(res => setRecipes(res.data));
+     
+ }, [location.state])
+   
 
   return (
     <div className="communityrecipe__page">
       <div className="communityrecipe__container">
           <div className="communityrecipe__container__inner">
-              <h3>CommunityRecipes</h3>
+            <div className="card-background communityrecipe__container-title">
+             <h3 className="communityrecipe__header">Community Recipes</h3>
+            </div>
+            <div className="card-background"> 
             <h4>Recipes shared by the Community</h4>
-            <input onChange={handleInputChange} onKeyDown={searchRecipes} type="text" placeholder="search"/>
+            <p className="paragraph">Upload Yours Too!</p>
+            <input className="communityrecipe-input" onChange={handleInputChange} onKeyDown={searchRecipes} type="text" placeholder="Search"/>
             {/* <button onClick={searchRecipes}>Search</button> */}
             <Link to="/uploadrecipe">
-                <button >Upload</button>
+                <button className="communityrecipe-btn" >Upload</button>
             </Link>
-            {recipes.length > 0 &&
+            
+            
+              <div className="communityrecipe__cards-container"> {recipes.length > 0 &&
                 recipes.map((r) => {
                   return (
                     <RecipeCard key={r.id} {...r}/>
                 );
               })}
+             </div>
+            </div>
+  
           </div>
         </div>
     </div>

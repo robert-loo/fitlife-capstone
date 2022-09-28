@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import './CalculatorResults.scss';
 import resultsBackground from '../../assets/images/results-image.png'
 import loseIcon from '../../assets/images/lose-icon.png'
+import muscleIcon from '../../assets/images/muscle-icon.png'
 
 function CalculatorResults(props) {
     const location = useLocation();
@@ -84,7 +85,7 @@ function CalculatorResults(props) {
 
         <div className="gainmuscle__container"> 
             <div className="lose__header"> 
-            <img src={loseIcon} alt="Lose Weight Icon" />
+            <img src={muscleIcon} alt="Lose Weight Icon" />
             <h3 className="lose__subheader muscle-title">Calories to Gain Muscle</h3> 
            </div>
         </div>
@@ -93,7 +94,7 @@ function CalculatorResults(props) {
                 <div className="lose__container-inner muscle-space">
                     <div className="lose__container-left"> 
                         <div> 
-                        <p className="slow">Lean Bulk</p>
+                        <p className="slow">Sustainable</p>
                         </div>
                         <div> 
                         <p className="speed">(.22kg per week)</p> 
@@ -116,3 +117,4 @@ function CalculatorResults(props) {
 }
 
 export default CalculatorResults
+

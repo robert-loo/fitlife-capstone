@@ -8,46 +8,51 @@ import "./UploadRecipe.scss"
 
 function UploadRecipe() {
   const [inputRecipeTitle, setInputRecipeTitle] = useState(""); 
-  const [imageURLs, setImageURLs] = useState(null);
   const [inputRecipeIntroduction, setInputRecipeIntroduction] = useState(""); 
   const [inputIngredients, setInputIngredients] = useState(""); 
   const [inputHowTo, setInputHowTo] = useState(""); 
-  const [fileData, setFileData] = useState(null);
+
+  const [file, setFile] = useState(null);
+  const [filename, setFilename] = useState("")
 
   const navigate = useNavigate();
   const onImageChange = (event)=>{
     console.log(event.target.files);
-    setFileData(event.target.files[0])
+    setFile(event.target.files[0])
+    setFilename(event.target.files[0].name)
   }
 
   //  TODO - How to upload an image dynamically and push it to the back end? 
 
   const submitForm = (event) => {
     event.preventDefault()
-    // let formData = new FormData();
     if (inputRecipeTitle !== ""){
-      // formData.append('images', fileData);
-      // formData.append('imageURLS', imageURLs);
+      let formData = new FormData();
+      formData.append('file', file);
+      formData.append('recipetitle', inputRecipeTitle);
+      formData.append('recipeintroduction', inputRecipeIntroduction);
+      formData.append('ingredients', inputIngredients);
+      formData.append('howto', inputHowTo);
       
 
 
-      console.log("submitted file data", fileData)   
-      axios.post('http://localhost:8001/uploadrecipe', {
-        // double check what inputs do you want to send back to the back-end
-        // images: fileData.map(file => file.name),
-        // imageURLS: imageURLs,
-        recipetitle: inputRecipeTitle,
-        recipeintroduction: inputRecipeIntroduction,
-        ingredients: inputIngredients,
-        howto: inputHowTo,
+      // console.log("submitted file data", fileData)   
+      // axios.post('http://localhost:8001/uploadrecipe', {
+      //   // double check what inputs do you want to send back to the back-end
+      //   // images: fileData.map(file => file.name),
+      //   // imageURLS: imageURLs,
+      //   recipetitle: inputRecipeTitle,
+      //   recipeintroduction: inputRecipeIntroduction,
+      //   ingredients: inputIngredients,
+      //   howto: inputHowTo,
 
-      })
-      // axios({
-      //   method: 'post',
-      //   url: 'http://localhost:8001/uploadrecipe',
-      //   data: formData,
-      //   headers: {"Content-type": "multipart/form-data"}
       // })
+      axios({
+        method: 'post',
+        url: 'http://localhost:8001/uploadrecipe',
+        data: formData,
+        headers: {"Content-type": "multipart/form-data"}
+      })
       .then(response => {
         if (response.data) {
           console.log(response.data)
@@ -57,28 +62,14 @@ function UploadRecipe() {
       .catch(function (error) {
         console.log(error);
       });
-      navigate("/communityrecipe")
+      navigate("/communityrecipe",{state: {filename: filename}} )
     }
   }
 
 const renderImages = () => {
-    // return fileData.map(file => {
-    //   const fileSource = URL.createObjectURL(file);
-    //   return  <img key={file.name} src={fileSource}></img>
-    // })
+      const fileSource = URL.createObjectURL(file);
+      return  <img key={file.name} src={fileSource}></img>
 }
-
-useEffect(() => {
-  // if (fileData.length < 1) return;
-  // const newImageUrls = [];
-  // fileData.forEach(img => newImageUrls.push(URL.createObjectURL(img)));
-  // setImageURLs(newImageUrls);
-  if (fileData) {
-    const reader = new FileReader();
-    const result = reader.readAsDataURL(fileData);
-    setImageURLs(result);
-  }
-}, [fileData])
 
   return (
   <main>
@@ -90,7 +81,7 @@ useEffect(() => {
               <h3>Add Photo</h3>
               <div>
                 <h2>Preview</h2>
-                {fileData && 
+                {file && 
                   renderImages()
                 }
               </div>

@@ -14,22 +14,25 @@ import CalculatorResults from "../CalculatorResults/CalculatorResults";
 
 
 const BASE_URL = "http://localhost:8001";
+const username = "robert";
+const password = "123";
 
 function Layout() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [inputUsername, setInputUsername] = useState("");
+    const [inputPassword, setInputPassword] = useState("");
     // TODO: create a state for username and password
   
     const onLogin = () => {
       //todo: compare username andpassword, if equals, then login
-      // if (password == ipnputpaswword && username === inputusername) {
+      if (password === inputPassword && username === inputUsername) {
         setIsAuthenticated(true);
+      }
     }
   
     const onLogout = () => {
       setIsAuthenticated(false)
     }
-    const username = "Robert";
-    const password = "123";
 
   return (
     <div>
@@ -54,8 +57,8 @@ function Layout() {
         <h1 className="login__header">FitLife</h1>
         <div className="login__box"> 
             <h1 className="login__title">Login</h1>
-            <input className="login__username" placeholder="Username"/>
-            <input className="login__password" placeholder="Password" />
+            <input className="login__username" placeholder="Username" onChange={(e) => setInputUsername(e.target.value)}/>
+            <input type="password" className="login__password" placeholder="Password" onChange={(e) => setInputPassword(e.target.value)} password/>
             <div className="btn__container"> 
             <button className="login-btn" onClick={() => onLogin()}>Login</button>
             </div>
