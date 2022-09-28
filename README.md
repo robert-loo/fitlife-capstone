@@ -1,6 +1,6 @@
 ### About the App
 
-FitLife is a mobile web app that helps users start their first step in their fitness journey -- Nutrition.
+FitLife is a mobile-designed web app that helps users start their first step in their fitness journey -- Nutrition.
 
 Users can calculate the amount of calories needed to consume based on their fitness goals (lose weight, maintain, or gain muscle). In addition, it offers a search recipe engine where you can find dishes with their nutrients and macros.  Users can also share and upload their personal recipes with the community!
 
