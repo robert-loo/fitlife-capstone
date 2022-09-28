@@ -26,6 +26,3 @@ Please refer to the following link in order to download the server-side of this 
 
 Link: https://github.com/rloo89/fitlife-server-capstone
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
