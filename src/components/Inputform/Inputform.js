@@ -121,12 +121,9 @@ const onClear = (e) => {
            <button className="results-btn btn-left"type="submit"
            onClick={(e) => handleSubmit(e)}
            >GET RESULTS!</button>
-
             </div>
            <div>
            <button className="results-btn" onClick={(e) => onClear(e)}>Clear</button>
-
-
            </div>
           </div>
         </form>
