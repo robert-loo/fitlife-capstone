@@ -143,6 +143,8 @@
 
 .form {
     padding: 1rem;
+    background-color: #FAFAFA;
+    border-radius: .9375rem;
 }
 
 .female-radio{
@@ -206,8 +208,9 @@
 }
 .btn-container{
     display: flex;
-    flex-direction: row;
-    margin-top: .5rem;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
 }
 
 .btn-left{

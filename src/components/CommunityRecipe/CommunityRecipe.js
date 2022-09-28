@@ -55,10 +55,10 @@ function CommunityRecipe() {
           <div className="communityrecipe__container__inner">
             <div className="card-background communityrecipe__container-title">
              <h3 className="communityrecipe__header">Community Recipes</h3>
+             <p className="communityrecipe__description">Find recipes shared by other users where you can share them too!</p>
             </div>
             <div className="card-background"> 
             <h4>Recipes shared by the Community</h4>
-            <p className="paragraph">Upload Yours Too!</p>
             <input className="communityrecipe-input" onChange={handleInputChange} onKeyDown={searchRecipes} type="text" placeholder="Search"/>
             {/* <button onClick={searchRecipes}>Search</button> */}
             <Link to="/uploadrecipe">

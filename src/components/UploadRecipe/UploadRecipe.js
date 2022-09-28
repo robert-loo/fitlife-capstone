@@ -34,19 +34,6 @@ function UploadRecipe() {
       formData.append('ingredients', inputIngredients);
       formData.append('howto', inputHowTo);
       
-
-
-      // console.log("submitted file data", fileData)   
-      // axios.post('http://localhost:8001/uploadrecipe', {
-      //   // double check what inputs do you want to send back to the back-end
-      //   // images: fileData.map(file => file.name),
-      //   // imageURLS: imageURLs,
-      //   recipetitle: inputRecipeTitle,
-      //   recipeintroduction: inputRecipeIntroduction,
-      //   ingredients: inputIngredients,
-      //   howto: inputHowTo,
-
-      // })
       axios({
         method: 'post',
         url: 'http://localhost:8001/uploadrecipe',
@@ -75,21 +62,20 @@ const renderImages = () => {
   <main>
     <form onSubmit={submitForm}>
       <div className="upload__container">
-        <h1 className="upload__header">Create your recipe!</h1>
+      <h3 className="upload__header">Recipe Details</h3>
+          <div className="upload__container-outer">
             <div>
-              <h4 className="upload__title">Recipe Details</h4>
-              <h3>Add Photo</h3>
+              <h3 className="upload__photo">Add Photo</h3>
               <div>
-                <h2>Preview</h2>
-                {file && 
-                  renderImages()
-                }
+                 {file && 
+                    renderImages()
+                  }
               </div>
-              <input type="file" name={inputRecipeTitle} multiple accept="image/*" onChange={onImageChange} />
+              <input className="upload" type="file" name={inputRecipeTitle} multiple accept="image/*" onChange={onImageChange} />
             </div>
-              <h4>Recipe Title</h4>
+              <h4 className="upload__title--description">Recipe Title</h4>
               <input
-                className="upload__title--form"
+                className="upload__input"
                 type="text"
                 placeholder="e.g Momma's apple pie"
                 value={inputRecipeTitle} onChange={event => setInputRecipeTitle(event.target.value)} 
@@ -98,28 +84,35 @@ const renderImages = () => {
                 <h4 className="upload__title--description">
                   Short Intro
                 </h4>
-                <textarea placeholder="Tell us about your recipe" value={inputRecipeIntroduction} onChange={event => setInputRecipeIntroduction(event.target.value)} />
+                <textarea className="upload__input" placeholder="Tell us about your recipe" value={inputRecipeIntroduction} onChange={event => setInputRecipeIntroduction(event.target.value)} />
               </div>
-                <h4>
+                <h4 className="upload__title--description">
                   Ingredients
                 </h4>
-                <textarea placeholder="500g chicken, diced in cubes." value={inputIngredients} onChange={event => setInputIngredients(event.target.value)} />
+                <textarea className="upload__input" placeholder="500g chicken, diced in cubes." value={inputIngredients} onChange={event => setInputIngredients(event.target.value)} />
                 </div>
-                <h4>
-                  How to Make
-                </h4>
-                <textarea placeholder="1. Boil the water first" value={inputHowTo} onChange={event => setInputHowTo(event.target.value)} />
-                <div className="upload__container--tablet">
-                <button type="submit">Upload Recipe</button>
+              <div className="upload__container-lower">
+                <div className="upload__howto"> 
+                  <h4 className="upload__title--description">
+                    How to Make
+                  </h4>
+                  <textarea className="upload__input" placeholder="1. Boil the water first" value={inputHowTo} onChange={event => setInputHowTo(event.target.value)} />
+                </div>
+              <div className="upload__container-btn">
+                <div> 
+                <button className="upload__cancel-button" type="submit">Upload Recipe</button>
+                </div>
                   <div className="upload__cancel--container">
                     <Link to="/communityrecipe">
-                      <button className="upload__cancel--button">CANCEL</button>{" "}
+                      <button className="upload__cancel-button">CANCEL</button>{" "}
                     </Link>
                   </div>
                 </div>
+              </div>
                 {/* {renderToaster && (
                   <div className="upload__toaster">Upload Successful</div>
                 )} */}
+            </div>
       </form>
     </main>
   )
