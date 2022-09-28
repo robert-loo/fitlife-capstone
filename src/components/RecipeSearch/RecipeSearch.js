@@ -39,32 +39,41 @@ const RecipeSearch = () => {
     <div className="searchbar">
       {recipe != null ? (
         <div>
-          <button onClick={() => setRecipe(null)}>clear</button>
-
           <div> 
-          <div>
-          <img className="recipe-img-detail" src={recipe.image}></img>
+          <div className="recipe-img-container">
+            <img className="recipe-img-detail" src={recipe.image}></img>
           </div>
-          <div> 
-          <h3>{recipe.label}</h3>
-          <p>Calories: {Math.round(recipe.calories)}</p>
+          <div className="recipe__container-upper"> 
+          <h3 className="recipe__label">{recipe.label}</h3>
+          <p className="recipe__macros">Macronutrients</p>
           </div>
           </div>
-
+          <div className="recipe__calories-container"> 
+          <div className="recipe__calories-container-inner"> 
+          <p className="calories">Calories: {Math.round(recipe.calories)}</p> 
+          </div>
+          </div>
           {recipe.digest.filter(f => ["Fat", "Protein", "Carbs"].includes(f.label))
           .map(d => (
-            <div>
-              <h2>{d.label}</h2>
-              <p>{Math.round(d.total)}</p>
+            <div className="recipe__macros-container"> 
+              <p className="macros">{d.label}</p>
+              <p className="macros">{Math.round(d.total)}g</p>
             </div>
           ))}
 
-          <div>Ingredients</div>
-          <ul>
+          <div className="ingredients__container">
+           <p className="ingredients">Ingredients</p>
+          </div>
+          <div className="list__container"> 
+          <ul className="list">
           {recipe.ingredientLines.map((i, index) => 
             <li key={index}>{i}</li>
             )}
           </ul>
+          </div>
+          <div className="recipesearch-btn-container"> 
+            <button className="recipesearch-btn" onClick={() => setRecipe(null)}>Go Back</button>
+            </div>
         </div>
       ) : (
         <div>
