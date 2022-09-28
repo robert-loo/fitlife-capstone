@@ -10,7 +10,7 @@
         background-repeat: no-repeat;
         background-position: left;
         background-position: 4%;
-        width: 95%;
+        width: 85%;
         border-radius: .625rem;
         margin-top: 0.25rem;
         padding: 0.25rem;
@@ -78,29 +78,13 @@
 }
 
 .recipe-img-detail{
-    // max-width: 105%;
     max-height: 100%;
     width: 100vw;
-    // width: 90vw;
-    // border-radius: .9375rem;
-    // position: fixed;
-    // right: 1.5625rem;
+
 
 }
 
 .recipe-img-container{
-    // bottom:0;
-    // left:0;
-    // // position:fixed;
-    // right:0;
-    // top:0;
-    // border-radius: .9375rem;
-    // max-width: 6.25rem;
-    // display: block;
-    // margin-left: auto;
-    // margin-right: auto;
-    // width: 90%;
-    // margin-top: 1rem;
     display: flex;
     justify-content: center;
     
@@ -116,7 +100,6 @@
     &__label{
         font-weight: 900;
         margin-bottom: 0;
-        // padding: 1rem;
     }
     &__macros{
         margin: 0;

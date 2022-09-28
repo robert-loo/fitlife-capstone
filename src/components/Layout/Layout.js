@@ -21,10 +21,9 @@ function Layout() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [inputUsername, setInputUsername] = useState("");
     const [inputPassword, setInputPassword] = useState("");
-    // TODO: create a state for username and password
+    
   
     const onLogin = () => {
-      //todo: compare username andpassword, if equals, then login
       if (password === inputPassword && username === inputUsername) {
         setIsAuthenticated(true);
       }

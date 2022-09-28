@@ -1,7 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Modal from "../Modal/Modal";
+import React, { useState } from "react";
 import './RecipeSearch.scss'
 import RecipeCard from "../RecipeCard/RecipeCard";
 
@@ -10,11 +8,10 @@ const API_ID = "0d2dab7c";
 const API_KEY = "91f1bd027a8a04dc52a7810b4657d595";
 
 const RecipeSearch = () => {
-  const [modal, setModal] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [results, setResults] = useState([]);
   const [recipe, setRecipe] = useState(null);
-  // const [diet, setDiet] = useState(null);
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,7 +25,6 @@ const RecipeSearch = () => {
           app_key: API_KEY,
           app_id: API_ID,
           q: searchValue,
-          // diet: diet,
         },
       })
       .then((res) => res.data["hits"]);
@@ -114,7 +110,6 @@ const RecipeSearch = () => {
                   </div>
               );
             })}
-          <Modal open={modal} onClose={() => setModal(false)} />
         </div>
       )}
     </div>

@@ -2,7 +2,6 @@
 .login{
     &__title{
         color: white;
-        // font-family: poppins;
     }
     &__header{
         display: flex;
@@ -19,25 +18,16 @@
         flex-direction: column;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        // background-position: 0 30%;
-        // position: relative;
-        // padding: 1rem;
     }
 
     &__box{
         padding-bottom: 1.5625rem;
         padding-left: 1.5625rem;
         padding-right: 1.5625rem;
-        // position: absolute;
-        // display: flex;
-        // flex-direction: column;
-        // right: 10%;
-        // bottom: 45%;
         background-color: rgba(0, 0, 0, 0.5);
         margin: auto auto;
         border-radius: 5px;
         box-shadow: 0 0 10px #000;
-        // background-color: white;
     }
     &-btn{
         margin-top: .5rem;
@@ -60,7 +50,6 @@
         border-radius: 5px;
         width: 100%;
         font-size: 18px;
-        // font-family: poppins;
     }
 
     &__password{
@@ -70,10 +59,6 @@
         border-radius: 5px;
         width: 100%;
         font-size: 18px;
-        // font-family: poppins;
     }
 }
 
-.btn__container{
-    // font-family: poppins;
-}

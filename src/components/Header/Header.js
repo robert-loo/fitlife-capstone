@@ -35,7 +35,6 @@ function Header({onLogout}) {
             <div className="title-container">
             <h2 className="title-header"> FitLife</h2>
             </div>
-            {/* <button className="logout-btn"onClick={() => onLogout()}>Logout</button> */}
         </div>
     </div>
   )

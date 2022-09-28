@@ -1,18 +1,13 @@
 .cover {
-    // height: 100vh;
     width: 100%;
 }
 
 .navbar {
     display: flex;
     padding: 0.5rem;
-    // padding-bottom: 2.625rem;
     width: 100%;
     background-color: #00ADB5;
     justify-content: start;
-    // place-content: space-around;
-    // position: absolute;
-    // top: 0;
 }
 
 .header-image{
@@ -48,14 +43,12 @@
     position: absolute;
     top: 3.5rem;
     background-color: #393E46;
-    // width: 12.5rem;
     width: 100%;
     height: 7.5rem;
     padding: 1rem;
     top: 4rem;
     left: 0rem;
     box-shadow: 0 -1rem 0 #333C41 ;
-    // z-index: 1;
     z-index: 10;
     text-decoration: none;
     transition: 850ms;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import "./UploadRecipe.scss"
@@ -22,7 +22,6 @@ function UploadRecipe() {
     setFilename(event.target.files[0].name)
   }
 
-  //  TODO - How to upload an image dynamically and push it to the back end? 
 
   const submitForm = (event) => {
     event.preventDefault()
@@ -43,7 +42,6 @@ function UploadRecipe() {
       .then(response => {
         if (response.data) {
           console.log(response.data)
-          // triggerToaster()
         }
       })
       .catch(function (error) {
@@ -100,18 +98,15 @@ const renderImages = () => {
                 </div>
               <div className="upload__container-btn">
                 <div> 
-                <button className="upload__cancel-button" type="submit">Upload Recipe</button>
+                <button className="upload__cancel-button" type="submit">Upload</button>
                 </div>
                   <div className="upload__cancel--container">
                     <Link to="/communityrecipe">
-                      <button className="upload__cancel-button">CANCEL</button>{" "}
+                      <button className="upload__cancel-button">Cancel</button>{" "}
                     </Link>
                   </div>
                 </div>
               </div>
-                {/* {renderToaster && (
-                  <div className="upload__toaster">Upload Successful</div>
-                )} */}
             </div>
       </form>
     </main>
