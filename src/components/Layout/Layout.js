@@ -1,4 +1,4 @@
-import InputForm from "../InputForm/Inputform";
+import InputForm from "../Inputform/Inputform";
 import HomePage from "../HomePage/HomePage";
 import NotFound from "../NotFound/NotFound";
 import Header from "../Header/Header";
