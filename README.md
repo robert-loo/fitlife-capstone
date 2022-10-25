@@ -23,6 +23,11 @@ Tech Stack:
 React, SASS, Flexbox, Node, Express,Git & Github, HTML, CSS, Javascript
 
 
+Currently the test username and password for this app is the following:
+
+username: robert
+password: 123
+
 Please refer to the following link in order to download the server-side of this project.
 
 Link: https://github.com/rloo89/fitlife-server-capstone
