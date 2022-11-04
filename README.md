@@ -21,7 +21,7 @@ For Future Implementation:
 Tech Stack:                 
  <img src="https://cdn.iconscout.com/icon/free/png-256/html5-40-1175193.png" width="50px">&nbsp;&nbsp; <img src="https://cdn.iconscout.com/icon/free/png-256/css3-11-1175239.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" width="50px"> &nbsp;&nbsp; <img src="https://cdn.iconscout.com/icon/free/png-256/sass-226054.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/express-8-1175029.png" width="50px">&nbsp;&nbsp;  &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/github-163-761603.png" width="50px"> 
 
-HTML, React, SASS, Flexbox, Node, Express,Git & Github, HTML, CSS, Javascript
+HTML, React, SASS, Flexbox, Node, Express,Git & Github, CSS, Javascript
 
 
 Currently the test username and password for this app is the following:
