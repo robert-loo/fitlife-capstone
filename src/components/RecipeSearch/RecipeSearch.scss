@@ -1,3 +1,5 @@
+@use "../../styles/partials/breakpoints" as *;
+
 .searchbar{
     &__container{
         height: 12.5rem;
@@ -23,6 +25,11 @@
         padding-top: 1rem;
         padding-bottom: 1rem;
         margin-bottom: .5rem;
+        @include tablet{
+        padding: 0.25rem;
+        padding-left: 3rem;
+        background-position: 2%;
+        }
     }
 }
 

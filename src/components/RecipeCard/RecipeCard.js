@@ -23,7 +23,7 @@ function RecipeCard(props) {
     <div className="recipecard__container">
       <div className="recipecard__left-container">
         <img className="recipe-img" src={buildImageURL()}></img>
-      </div>
+      </div>   
       <div className="recipecard__right-container">
         <h4 className="recipecard__right-container__title">
           {props.recipetitle}

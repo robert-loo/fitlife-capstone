@@ -1,11 +1,13 @@
 import "./App.scss";
 import Layout from "./components/Layout/Layout";
 
-
-
 function App() {
   return (
-    <Layout/>
+    <div class="faker-phone">
+      <div class="faker-phone--screen">
+        <Layout />
+      </div>
+    </div>
   );
 }
 

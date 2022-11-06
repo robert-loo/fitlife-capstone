@@ -1,3 +1,5 @@
+@use "../../styles/partials/breakpoints" as *;
+
 .footer {
     &__upper{
         background-color: #333C41;
@@ -42,6 +44,9 @@
     padding-left: 16px;
     padding-right: 16px;
     font-weight: 300;
+    @include tablet {
+      text-align: justify;
+    }
 }
 
 
