@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+### About the App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FitLife is a mobile-designed web app that helps users start their first step in their fitness journey -- Nutrition.
 
-## Available Scripts
+Users can calculate the amount of calories needed to consume based on their fitness goals (lose weight, maintain, or gain muscle). In addition, it offers a search recipe engine where you can find dishes with their nutrients and macros.  Users can also share and upload their personal recipes with the community!
 
-In the project directory, you can run:
 
-### `npm start`
+Features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Calorie (BMR) Calculator that determines your calorie intake based on your stats and fitness goals 
+- A recipe search engine where you can find delicious dishes that includes the ingredients and macros.
+- A community recipe database where users can share and upload their own masterpieces.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+For Future Implementation:
 
-### `npm test`
+- Creating personalized log-in features such as saving the users inputs such as calories, recipes.
+- Desktop Responsive Design
+- Add more features and US Units to the BMR Calculator.
+- Comments section where people can share their reviews.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tech Stack:                 
+ <img src="https://cdn.iconscout.com/icon/free/png-256/html5-40-1175193.png" width="50px">&nbsp;&nbsp; <img src="https://cdn.iconscout.com/icon/free/png-256/css3-11-1175239.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" width="50px"> &nbsp;&nbsp; <img src="https://cdn.iconscout.com/icon/free/png-256/sass-226054.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/express-8-1175029.png" width="50px">&nbsp;&nbsp;  &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/github-163-761603.png" width="50px"> 
 
-### `npm run build`
+HTML, React, SASS, Flexbox, Node, Express,Git & Github, CSS, Javascript
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Currently the test username and password for this app is the following:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+username: robert
+password: 123
 
-### `npm run eject`
+Please refer to the following link in order to download the server-side of this project.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Link: https://github.com/rloo89/fitlife-server-capstone
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
