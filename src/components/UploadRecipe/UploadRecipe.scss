@@ -9,14 +9,11 @@
         font-size: medium;
         font-weight: 500;
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
     }
     &__container{
         &-outer{
             padding-left: 2rem;
-        }
-        &-lower{
-            // padding-left: 32px;
         }
     }
     &__input{

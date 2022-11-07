@@ -37,7 +37,7 @@ const RecipeSearch = () => {
         <div>
           <div> 
           <div className="recipe-img-container">
-            <img className="recipe-img-detail" src={recipe.image}></img>
+            <img className="recipe-img-detail" alt="" src={recipe.image}></img>
           </div>
           <div className="recipe__container-upper"> 
           <h3 className="recipe__label">{recipe.label}</h3>

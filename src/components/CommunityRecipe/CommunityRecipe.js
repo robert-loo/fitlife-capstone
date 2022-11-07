@@ -20,12 +20,12 @@ function CommunityRecipe() {
     setSearchTerm(event.target.value);
   };
 
-  const onKeyDown = () => {};
+  
 
   const searchRecipes = (event) => {
     if (event.key === "Enter") {
       console.log(`${BASE_URL}/searchrecipes/?q=${searchTerm}`);
-      const rsp = axios
+      axios
         .get(`${BASE_URL}/searchrecipes/?q=${searchTerm}`)
         .then((res) => {
           setRecipes(res.data);
@@ -34,13 +34,13 @@ function CommunityRecipe() {
     }
   };
   useEffect(() => {
-    const rsp = axios
+    axios
       .get(BASE_URL + "/searchrecipes")
       .then((res) => setRecipes(res.data));
   }, []);
 
   useEffect(() => {
-    const rsp = axios
+    axios
       .get(BASE_URL + "/searchrecipes")
       .then((res) => setRecipes(res.data));
   }, [location.state]);

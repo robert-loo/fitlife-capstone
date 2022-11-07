@@ -13,7 +13,6 @@ import './Layout.scss';
 import CalculatorResults from "../CalculatorResults/CalculatorResults";
 
 
-const BASE_URL = "http://localhost:8001";
 const username = "robert";
 const password = "123";
 

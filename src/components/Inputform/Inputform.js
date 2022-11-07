@@ -12,7 +12,6 @@ function InputForm() {
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState("");
   const [isMale, setIsMale] = useState(true);
-  const [bmrResult, setBmrResult] = useState(55);
   const [activity, setActivity] = useState(0);
 
   const options = [

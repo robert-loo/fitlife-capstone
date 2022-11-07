@@ -53,7 +53,7 @@ function UploadRecipe() {
 
 const renderImages = () => {
       const fileSource = URL.createObjectURL(file);
-      return  <img key={file.name} src={fileSource}></img>
+      return  <img key={file.name} alt="" src={fileSource}></img>
 }
 
   return (
