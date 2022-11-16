@@ -3,9 +3,10 @@ import "./RecipeCard.scss";
 import Heart from "../../assets/images/heart-icon.png";
 import Stars from "../../assets/images/stars.png";
 
-const BASE_URL = "http://localhost:8001";
+const { REACT_APP_BASE_URL } = process.env;
 
 function RecipeCard(props) {
+  
   const formatRecipeIntroduction = () => {
     return props.recipeintroduction.length > 50
       ? `${props.recipeintroduction.substring(0, 50)}...`
@@ -14,7 +15,7 @@ function RecipeCard(props) {
 
   const buildImageURL = () => {
     if (!props.imageExternal) {
-      return `${BASE_URL}/images/${props.image}`;
+      return `${REACT_APP_BASE_URL}/images/${props.image}`;
     }
     return props.imageExternal;
   };

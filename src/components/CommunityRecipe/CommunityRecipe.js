@@ -8,8 +8,7 @@ import { useLocation } from 'react-router-dom'
 
 
 
-
-const BASE_URL = "http://localhost:8001";
+const { REACT_APP_BASE_URL } = process.env;
 
 function CommunityRecipe() {
   const [recipes, setRecipes] = useState([]);
@@ -24,9 +23,9 @@ function CommunityRecipe() {
 
   const searchRecipes = (event) => {
     if (event.key === "Enter") {
-      console.log(`${BASE_URL}/searchrecipes/?q=${searchTerm}`);
+      console.log(`${REACT_APP_BASE_URL}/searchrecipes/?q=${searchTerm}`);
       axios
-        .get(`${BASE_URL}/searchrecipes/?q=${searchTerm}`)
+        .get(`${REACT_APP_BASE_URL}/searchrecipes/?q=${searchTerm}`)
         .then((res) => {
           setRecipes(res.data);
           console.log(recipes);
@@ -35,13 +34,13 @@ function CommunityRecipe() {
   };
   useEffect(() => {
     axios
-      .get(BASE_URL + "/searchrecipes")
+      .get(REACT_APP_BASE_URL + "/searchrecipes")
       .then((res) => setRecipes(res.data));
   }, []);
 
   useEffect(() => {
     axios
-      .get(BASE_URL + "/searchrecipes")
+      .get(REACT_APP_BASE_URL + "/searchrecipes")
       .then((res) => setRecipes(res.data));
   }, [location.state]);
 
