@@ -31,5 +31,7 @@ password: 123
 
 Please refer to the following link in order to download the server-side of this project.
 
+Deployed Website Link: https://fitlife.robertloo.ca
+
 Link: https://github.com/rloo89/fitlife-server-capstone
 
