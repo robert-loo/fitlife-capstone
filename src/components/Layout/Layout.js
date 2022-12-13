@@ -8,35 +8,17 @@ import UploadRecipe from "../UploadRecipe/UploadRecipe";
 import Footer from "../Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
-import {useState} from "react";
 import './Layout.scss';
 import CalculatorResults from "../CalculatorResults/CalculatorResults";
 
 
-const username = "robert";
-const password = "123";
-
 function Layout() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [inputUsername, setInputUsername] = useState("");
-    const [inputPassword, setInputPassword] = useState("");
-    
-  
-    const onLogin = () => {
-      if (password === inputPassword && username === inputUsername) {
-        setIsAuthenticated(true);
-      }
-    }
-  
-    const onLogout = () => {
-      setIsAuthenticated(false)
-    }
 
   return (
     <div>
     {/* {isAuthenticated ?   */}
       <BrowserRouter>
-      <Header  onLogout={onLogout}/>
+      <Header/>
       <Routes>
         <Route path="/quiz" element=""/>
         <Route path="/BMRcalculator" element={<InputForm/>}/>
