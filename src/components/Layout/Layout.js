@@ -34,7 +34,7 @@ function Layout() {
 
   return (
     <div>
-    {isAuthenticated ?  
+    {/* {isAuthenticated ?   */}
       <BrowserRouter>
       <Header  onLogout={onLogout}/>
       <Routes>
@@ -49,7 +49,7 @@ function Layout() {
       </Routes>
       <Footer/>
     </BrowserRouter>
-      :
+      {/* :
       <> 
       <div className="login__container">
         <h1 className="login__header">FitLife</h1>
@@ -63,7 +63,7 @@ function Layout() {
         </div>
       </div>
       </>
-  }
+  }*/}
   </div>
   )
 }
