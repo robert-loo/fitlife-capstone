@@ -7,7 +7,7 @@ function HomePage() {
 
   return (
     <div>
-      <div className="homepage__container">
+      <div className="homepage__container container">
         <div class="hero__overlay"></div>
           <div className="homepage__subheader--container"> 
           <h2 className="homepage__title">Fit does not quit</h2>

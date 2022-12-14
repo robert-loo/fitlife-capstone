@@ -1,13 +1,22 @@
+@use "../../styles/partials/breakpoints" as *;
+
+
 .homepage{
     &__container{
     background-image: url('../../assets/images/hero-image.jpg');
     height: 30vh;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
     display: flex;
     justify-content: center;
+    @include tablet{
+        height: 40vh;
+        @include desktop{
+            height: 60vh;
+        }
+    }
 }
+
     &__title{
         color: white;
         margin-bottom: 0.5rem;
@@ -27,6 +36,10 @@
         padding-top: 3rem;
         width: 80%;
         text-align: center;
+        @include tablet{
+            padding-top: 5rem;
+        }
+
     }
     &-btn{
         background-color: #00ADB5;

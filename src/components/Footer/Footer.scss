@@ -19,6 +19,9 @@
         display: flex;
         justify-content: center;
         padding: 1rem;
+        @include desktop{
+          font-weight: bold;
+        }
     }
 
     &__social{
@@ -36,6 +39,9 @@
     justify-content: center;
     margin-bottom: 0;
     font-size: large;
+    @include tablet {
+      font-size: larger;
+    }
 }
 
 .text-justify{
@@ -49,6 +55,9 @@
       height: 19vh;
       justify-items: center;
       align-items: center;
+      padding-left: 5rem;
+      padding-right: 5rem;
+      font-size: larger;
     }
 }
 
@@ -78,11 +87,14 @@
 .site-footer h6
 {
   color:#fff;
-  font-size:16px;
+  font-size: large;
   text-transform:uppercase;
   margin-top:5px;
   letter-spacing:2px
+
 }
+
+
 .site-footer a
 {
   color: white;
@@ -238,4 +250,7 @@
     margin-bottom: 1rem;
     margin-top: 0;
     padding-top: 0;
+    @include tablet{
+      font-size: large;
+    }
 }
