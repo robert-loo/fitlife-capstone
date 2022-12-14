@@ -46,7 +46,9 @@
     padding-right: 16px;
     font-weight: 300;
     @include tablet {
-      text-align: justify;
+      height: 19vh;
+      justify-items: center;
+      align-items: center;
     }
 }
 
@@ -58,6 +60,11 @@
   font-size:15px;
   line-height:24px;
   color:#737373;
+  height:55vh;
+  @include tablet {
+    text-align: center;
+  }
+  
 }
 .site-footer hr
 {
