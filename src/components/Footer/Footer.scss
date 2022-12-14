@@ -50,6 +50,7 @@
     font-weight: 300;
     @include tablet {
       height: 19vh;
+      font-size: 1.125rem;
       justify-items: center;
       align-items: center;
       padding-left: 5rem;
@@ -69,7 +70,7 @@
   font-size:15px;
   line-height:24px;
   color:#737373;
-  height:57vh;
+  height:68vh;
   @include tablet {
     text-align: center;
   }
@@ -87,12 +88,14 @@
 .site-footer h6
 {
   color:#fff;
-  font-size: large;
+  // font-size: large;
   // text-transform:uppercase;
   margin-top:5px;
   letter-spacing:2px
 
 }
+
+
 
 
 .site-footer a
@@ -253,4 +256,28 @@
     @include tablet{
       font-size: large;
     }
+}
+
+.about {
+  font-size: medium;
+  text-transform: uppercase;
+  @include tablet{
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+
+}
+
+.community {
+  font-size: medium;
+  margin-bottom: 3.125rem;
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.footer__social--logo{
+  @include tablet{
+    height: 2rem;
+  }
 }

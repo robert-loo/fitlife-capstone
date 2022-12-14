@@ -23,7 +23,7 @@ function Footer() {
             <p className="copyright-text">&copy; 2022 All Rights Reserved by Fitlife LLC.
             </p>
           </div>
-          <h4 className="footer__social-header">Join the Community!</h4>
+          <h4 className="footer__social-header community">Join the Community!</h4>
           <div class="footer__social">
             <a href="https://www.twitter.com/">
             <img class="footer__social--logo" src={twitterLogo} alt="Twitter"/></a>
