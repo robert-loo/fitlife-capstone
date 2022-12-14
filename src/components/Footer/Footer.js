@@ -11,7 +11,7 @@ function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-md-6">
-            <h6 className="footer__about">About</h6>
+            <h6 className="footer__about about">About</h6>
             <p className="text-justify">FitLife is a web-based app where users can start their fitness journey. 
              Users can search for recipes and also share their own with the community!</p>
           </div>
