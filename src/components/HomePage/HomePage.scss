@@ -4,16 +4,13 @@
 .homepage{
     &__container{
     background-image: url('../../assets/images/hero-image.jpg');
-    height: 30vh;
+    height: 37vh;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     @include tablet{
         height: 40vh;
-        @include desktop{
-            height: 60vh;
-        }
     }
 }
 

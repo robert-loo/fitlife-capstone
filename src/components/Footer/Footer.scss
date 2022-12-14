@@ -19,9 +19,6 @@
         display: flex;
         justify-content: center;
         padding: 1rem;
-        @include desktop{
-          font-weight: bold;
-        }
     }
 
     &__social{
@@ -59,7 +56,6 @@
       padding-right: 5rem;
       font-size: larger;
       @include desktop{
-        font-size: xx-large;
         line-height: 3rem;
         padding-left: 10rem;
         padding-right: 10rem;
@@ -75,7 +71,7 @@
   font-size:15px;
   line-height:24px;
   color:#737373;
-  height:55vh;
+  height:40vh;
   @include tablet {
     text-align: center;
   }
