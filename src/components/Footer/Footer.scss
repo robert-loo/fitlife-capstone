@@ -250,7 +250,7 @@
     display: flex;
     justify-content: center;
     font-size: medium;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     margin-top: 0;
     padding-top: 0;
     @include tablet{
@@ -270,9 +270,8 @@
 
 .community {
   font-size: medium;
-  margin-bottom: 3.125rem;
-  @include tablet {
-    margin-bottom: 0;
+  @include tablet{
+    margin-bottom: 3.125rem;
   }
 }
 
